@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>I'm Sorry ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:white;
+    background:#ffdbe7;
+}
+
+/* BACKGROUND SLIDESHOW */
+
+.bg-slideshow{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+}
+
+.bg-slideshow img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    animation:fade 18s infinite;
+    filter:brightness(0.45);
+}
+
+.bg-slideshow img:nth-child(1){
+    animation-delay:0s;
+}
+.bg-slideshow img:nth-child(2){
+    animation-delay:6s;
+}
+.bg-slideshow img:nth-child(3){
+    animation-delay:12s;
+}
+
+@keyframes fade{
+    0%{opacity:0;}
+    10%{opacity:1;}
+    30%{opacity:1;}
+    40%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/* FLOATING HEARTS */
+
+.hearts span{
+    position:fixed;
+    bottom:-50px;
+    color:#ffb6c1;
+    animation:float 10s linear infinite;
+    font-size:20px;
+    z-index:-1;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-duration:8s;
+}
+.hearts span:nth-child(2){
+    left:30%;
+    animation-duration:12s;
+}
+.hearts span:nth-child(3){
+    left:50%;
+    animation-duration:10s;
+}
+.hearts span:nth-child(4){
+    left:70%;
+    animation-duration:14s;
+}
+.hearts span:nth-child(5){
+    left:90%;
+    animation-duration:9s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:40px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.25);
+    animation:slideUp 1.5s ease;
+}
+
+@keyframes slideUp{
+    from{
+        transform:translateY(60px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+h1{
+    text-align:center;
+    font-family:'Pacifico',cursive;
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#ffe8f0;
+}
+
+.subtitle{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:1rem;
+    color:#fff0f5;
+}
+
+/* LETTER */
+
+.letter{
+    background:rgba(255,255,255,0.12);
+    border-radius:25px;
+    padding:30px;
+    line-height:2;
+    font-size:1rem;
+    color:white;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.letter textarea{
+    width:100%;
+    min-height:420px;
+    border:none;
+    outline:none;
+    resize:vertical;
+    background:transparent;
+    color:white;
+    font-size:1rem;
+    line-height:2;
+    font-family:'Poppins',sans-serif;
+}
+
+/* DATE SECTION */
+
+.date-box{
+    margin-top:40px;
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    border-radius:25px;
+}
+
+.date-box h2{
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.date-box input{
+    padding:12px;
+    width:80%;
+    max-width:400px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+    margin-top:10px;
+    font-size:1rem;
+}
+
+.date-btn{
+    margin-top:20px;
+    padding:14px 28px;
+    border:none;
+    border-radius:50px;
+    background:#ff8fb1;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.date-btn:hover{
+    transform:scale(1.08);
+    background:#ff6f9d;
+}
+
+.popup{
+    margin-top:20px;
+    display:none;
+    font-size:1.1rem;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:35px;
+    font-size:0.9rem;
+    color:#ffe8f0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .container{
+        padding:25px;
+    }
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    .letter{
+        padding:20px;
+    }
+
+    .letter textarea{
+        min-height:520px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND IMAGES -->
+<div class="bg-slideshow">
+    <img src="image1.jpg" alt="">
+    <img src="image2.jpg" alt="">
+    <img src="image3.jpg" alt="">
+</div>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts">
+    <span>💗</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>💘</span>
+    <span>💞</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <h1>I'm Sorry 🥺</h1>
+
+    <p class="subtitle">
+        A small apology from the dumbest person who loves you the most ❤️
+    </p>
+
+    <!-- EDITABLE LETTER -->
+    <div class="letter">
+
+<textarea>
+Hey this is me again 🥲 your dumbahh idiot who always makes you feel sad and hurt and i actually dont want you to feel that way at all I know this might sound like a small thing but I understand why it upset you and I’m sorry for wearing those clothes again even after knowing how much you dislike them I should’ve paid more attention to your feelings and I m really sorry for that from the bottom of my heart and instead of brushing it off like it didn’t matter
+
+It’s not about the clothes themselves it’s about making you feel heard and cared for and I realize I failed at that today I never want you to feel like your opinion means nothing to me because it genuinely does I know you always notice the little things about me and put effort into how I look and carry myself and I appreciate that I’m sorry for annoying you and for being careless about something that mattered to you I’d rather see you smiling at me than upset because of something I could’ve easily avoided ❤️
+</textarea>
+
+    </div>
+
+    <!-- DATE SECTION -->
+    <div class="date-box">
+
+        <h2>Will you go on a date with me? 🌸</h2>
+
+        <p style="margin-bottom:15px;">
+            We will be going out on 13th after class💕
+        </p>
+
+        <input type="text" placeholder="We will go out and have some quality time">
+
+        <br>
+
+        <button class="date-btn" onclick="showMessage()">
+           Please accept my request
+        </button>
+
+        <div class="popup" id="popup">
+            I m very sorry for what i did and i am very ashamed of my doings and i will never ever do that and i hope you will accept my request and i promise you from the        bottom of my heart that i will never make you feel that and i only wanna see you smile happy joyful and glow like you do all the time.
+I know we already spend time together, but I wanted to ask you properly this time.
+Can I take you out on a real date?
+Just you and me no distractions, no stress, no overthinking. I want a day where I get to see you smile, hear your random stories, hold your hand, and make new memories with you. Maybe we could dress up a little, go somewhere nice, eat your favorite food, take cute pictures, and just enjoy each other’s company.
+Being with you honestly makes every moment special, and I’d love the chance to make one whole day about us. You deserve soft love, effort, and someone who genuinely wants to make you happy and I want to be that person for you every single day.
+So will you let me take you out?
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made with love, guilt, and way too many apologies 💗
+    </div>
+
+</div>
+
+<script>
+
+function showMessage(){
+    document.getElementById("popup").style.display = "block";
+}
+
+/* Sparkle cursor effect */
+
+document.addEventListener("mousemove", function(e){
+
+    const sparkle = document.createElement("div");
+
+    sparkle.innerHTML = "✨";
+
+    sparkle.style.position = "fixed";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+    sparkle.style.pointerEvents = "none";
+    sparkle.style.fontSize = "14px";
+    sparkle.style.animation = "sparkleFade 1s forwards";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>{
+        sparkle.remove();
+    },1000);
+
+});
+
+</script>
+
+<style>
+@keyframes sparkleFade{
+    from{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+    to{
+        opacity:0;
+        transform:translateY(-20px) scale(1.8);
+    }
+}
+</style>
+
+</body>
+</html>
